@@ -95,7 +95,13 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/$cfzoneid/settings/
      --data '{"value":"under_attack"}'
 EOF
 
-	chmod -R 777 /root/cf-auto-uam
+	touch /root/cf-auto-uam/load.avg
+	chmod 500 /root/cf-auto-uam/
+	chmod 500 /root/cf-auto-uam/activate.sh
+	chmod 500 /root/cf-auto-uam/deactivate.sh
+	chmod 500 /root/cf-auto-uam/high.sh
+	chmod 500 /root/cf-auto-uam/uam.sh
+	chmod 600 /root/cf-auto-uam/load.avg
 	crontab -l > cron1
 	echo "* * * * * cd /root/cf-auto-uam/ ; bash activate.sh" >> cron1
 	crontab cron1
@@ -174,7 +180,13 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/$cfzoneid/settings/
      --data '{"value":"under_attack"}'
 EOF
 
-	chmod -R 777 /root/cf-auto-uam
+	touch /root/cf-auto-uam/load.avg
+	chmod 500 /root/cf-auto-uam/
+	chmod 500 /root/cf-auto-uam/activate.sh
+	chmod 500 /root/cf-auto-uam/deactivate.sh
+	chmod 500 /root/cf-auto-uam/high.sh
+	chmod 500 /root/cf-auto-uam/uam.sh
+	chmod 600 /root/cf-auto-uam/load.avg
 	crontab -l > cron1
 	echo "* * * * * cd /root/cf-auto-uam/ ; bash activate.sh" >> cron1
 	crontab cron1
